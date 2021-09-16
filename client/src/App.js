@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import Home from "./components/Home/Home";
 import Auth from "./components/Auth/Auth";
 
 function App() {
-  let [user, setUser] = useState(false);
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   return (
     <BrowserRouter>

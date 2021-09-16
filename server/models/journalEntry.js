@@ -9,6 +9,7 @@ const entrySchema = mongoose.Schema({
   lowScore: Number,
   highBody: String,
   lowBody: String,
+  todaysScore: Number,
   tags: [String],
 });
 
