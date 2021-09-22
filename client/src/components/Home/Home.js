@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Grow, Grid } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { getEntriesByUserId } from "../../actions/entries";
 
 import Form from "../Form/Form";
 import EntryList from "../EntryList/EntryList";
 
 export default function Home() {
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const userId = user?.result?.googleId || user?.result?._id;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getEntriesByUserId(userId));
+  }, []);
+
   return (
     <Grow in>
-      <Container maxWidth='xl'>
+      <Container maxWidth='xl' style={{ padding: "0px" }}>
         <Grid
           container
           justifyContent='space-between'

@@ -11,7 +11,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' style={{ padding: "0px" }}>
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
@@ -20,6 +20,7 @@ function App() {
             exact
             component={() => (!user ? <Auth /> : <Redirect to='/' />)}
           />
+          <Route path='/:id' exact component={Home} />
         </Switch>
       </Container>
     </BrowserRouter>

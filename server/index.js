@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import entryRoutes from "./routes/entry.js";
+import entryRoutes from "./routes/entries.js";
 import userRoutes from "./routes/user.js";
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(
   })
 );
 
-app.use("/entry", entryRoutes);
+app.use("/entries", entryRoutes);
 app.use("/user", userRoutes);
 
 app.get("/", (req, res) => {

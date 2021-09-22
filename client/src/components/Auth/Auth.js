@@ -62,7 +62,8 @@ export default function Auth() {
 
     try {
       dispatch({ type: "AUTH", data: { result, token } });
-      history.push("/");
+
+      history.push(`/`);
     } catch (error) {
       console.log(error);
     }

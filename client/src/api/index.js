@@ -15,5 +15,8 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
+export const createEntry = (newEntry) => API.post("/entries", newEntry);
+export const getEntriesByUserId = (id) => API.get(`entries/${id}`);
+
 export const signIn = (formData) => API.post("/user/signin", formData);
 export const signUp = (formData) => API.post("/user/signup", formData);

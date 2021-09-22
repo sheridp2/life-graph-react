@@ -37,6 +37,7 @@ function Form() {
         <Typography variant='h6'>{`${new Date().toLocaleDateString()} Journal Entry`}</Typography>
 
         <TextField
+          required
           name='body'
           variant='outlined'
           label="Today's Journal Entry"
@@ -49,6 +50,7 @@ function Form() {
         />
         <div className={classes.textFieldCont}>
           <TextField
+            required
             id='filled-number'
             label='High Score (0-100)'
             type='number'
@@ -65,6 +67,7 @@ function Form() {
             }}
           />
           <TextField
+            required
             id='filled-number'
             label='Low Score (0-100)'
             type='number'
@@ -81,6 +84,7 @@ function Form() {
             }}
           />
           <TextField
+            required
             name='highBody'
             variant='outlined'
             label="Today's High Reason"
@@ -95,6 +99,7 @@ function Form() {
           />
 
           <TextField
+            required
             name='lowBody'
             variant='outlined'
             label="Today's Low Reason"
@@ -110,6 +115,7 @@ function Form() {
         </div>
 
         <TextField
+          required
           name='tags'
           variant='outlined'
           label='Tags (coma separated)'
@@ -120,6 +126,7 @@ function Form() {
           }
         />
         <TextField
+          required
           id='filled-number'
           label='Overall Score (0-100)'
           type='number'

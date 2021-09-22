@@ -1,4 +1,5 @@
 export const CREATE = "CREATE";
+export const FETCH_BY_ID = "FETCH_BY_ID";
 
 export const AUTH = "AUTH";
 export const LOGOUT = "LOGOUT";

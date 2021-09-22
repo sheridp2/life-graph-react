@@ -25,6 +25,9 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     width: "400px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100px",
+    },
   },
   userName: {
     display: "flex",

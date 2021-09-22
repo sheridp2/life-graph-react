@@ -12,8 +12,21 @@ export const createEntry = async (req, res) => {
   try {
     await newEntry.save();
 
-    res.status(201).json(newPost);
+    res.status(201).json(newEntry);
   } catch (error) {
     res.status(409).json({ message: error.message });
+  }
+};
+
+export const getEntriesByUserId = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const entries = await JournalEntry.find({
+      creator: id,
+    });
+    res.json({ data: entries });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 };
