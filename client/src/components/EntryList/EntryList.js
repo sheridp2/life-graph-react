@@ -19,7 +19,7 @@ function EntryList() {
           container
           alignItems='stretch'
           spacing={2}>
-          {entries.map((entry) => (
+          {entries.reverse().map((entry) => (
             <Grid key={entry._id} item xs={12}>
               <Entry entry={entry} />
             </Grid>

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const entrySchema = mongoose.Schema({
   date: { type: Date, default: Date.now },
+  title: String,
   name: String,
   creator: String,
   body: String,

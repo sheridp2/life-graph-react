@@ -40,6 +40,7 @@ export default function Entry({ entry }) {
   return (
     <Card className={classes.card} raised elevation={6}>
       <div className={classes.overlay}>
+        <Typography variant='h6'>{entry.title}</Typography>
         <Typography variant='h6'>
           {moment(entry.date).format("MMMM Do YYYY, h:mm:ss a")}
         </Typography>

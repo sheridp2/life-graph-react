@@ -5,6 +5,7 @@ import { getEntriesByUserId } from "../../actions/entries";
 
 import Form from "../Form/Form";
 import EntryList from "../EntryList/EntryList";
+import Graph from "../Graph/Graph";
 
 export default function Home() {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -24,10 +25,13 @@ export default function Home() {
           alignItems='stretch'
           spacing={3}>
           <Grid item xs={12} sm={6} md={7}>
-            <EntryList />
+            <Graph />
           </Grid>
           <Grid item xs={12} sm={6} md={5}>
             <Form />
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
+            <EntryList />
           </Grid>
         </Grid>
       </Container>

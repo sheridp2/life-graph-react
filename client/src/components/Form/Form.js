@@ -9,6 +9,7 @@ import { createEntry } from "../../actions/entries";
 function Form() {
   const user = JSON.parse(localStorage.getItem("profile"));
   const [entryData, setEntryData] = useState({
+    title: "",
     body: "",
     highScore: "",
     lowScore: "",
@@ -35,6 +36,18 @@ function Form() {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}>
         <Typography variant='h6'>{`${new Date().toLocaleDateString()} Journal Entry`}</Typography>
+        <TextField
+          required
+          name='body'
+          variant='outlined'
+          label='Title'
+          fullWidth
+          multiline
+          value={entryData.title}
+          onChange={(e) =>
+            setEntryData({ ...entryData, title: e.target.value })
+          }
+        />
 
         <TextField
           required
